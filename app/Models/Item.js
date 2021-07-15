@@ -1,5 +1,7 @@
+import { generateId } from "../Utils/GenerateId.js"
+
 export default class Item {
-    constructor({ name, price, description, quantity, imgUrl, id }) {
+    constructor({ name, price, description, quantity, imgUrl, id = generateId() }) {
         this.name = name
         this.price = price
         this.description = description
@@ -20,11 +22,20 @@ export default class Item {
                         </div>
                         <p><em>$${this.price}</em></p>
                         <p>${this.description}</p>
-                        <p>In Stock: ${this.quantity}<button class="btn-warning">Add to cart</button>
-                        </p>
+                        <p>${this.MyQuantity}</p>
+                        <p>ID: ${this.id}</p>
                     </div>
                 </div>
             </div>
     `
+    }
+    get MyQuantity() {
+        let template = ''
+        if (this.quantity == 0) {
+            template += "<em>OUT OF STOCK</em>"
+        } else {
+            template += `In Stock: ${this.quantity}<button class="btn-warning" onsumbit="addItem(${this.id})">Add to cart</button>`
+        }
+        return template
     }
 }
