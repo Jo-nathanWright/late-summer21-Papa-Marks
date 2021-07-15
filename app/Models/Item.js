@@ -12,7 +12,7 @@ export default class Item {
 
     get Template() {
         return `
-        <div class="col-md-3 mt-2">
+        <div class="col-md-3 mt-2 ">
                 <div class="item bg-light shadow">
                     <img src="${this.imgUrl}"
                         class="w-100" alt="${this.name}">
@@ -41,26 +41,15 @@ export default class Item {
 
     get ModalTemplate() {
         return `
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        ...
-                    </div>
-                    <div class="modal-footer d-flex justify-content-between">
-                        <button type="button" class="btn-danger" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn-secondary">Buy Items</button>
-                    </div>
-                </div>
+            <div class="col-4">
+                <img src="${this.imgUrl}"
+                    class="w-100" alt="${this.name}">
             </div>
-        </div>
+            <div class="col-8 d-flex flex-row">
+                ${this.name}
+                $${this.price}
+                ${this.quantity}
+            </div>
         `
     }
 }

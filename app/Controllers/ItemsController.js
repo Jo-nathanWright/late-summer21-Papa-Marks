@@ -26,6 +26,6 @@ export default class ItemsController {
         loadState()
     }
 
-    //createCart()
+
     //addItem(id) - This tracks the item id 
 }
