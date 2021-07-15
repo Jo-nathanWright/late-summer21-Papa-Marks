@@ -34,7 +34,7 @@ export default class Item {
         if (this.quantity == 0) {
             template += "<em>OUT OF STOCK</em>"
         } else {
-            template += `In Stock: ${this.quantity}<button class="btn-warning" onsumbit="addItem(${this.id})">Add to cart</button>`
+            template += `In Stock: ${this.quantity} <button class="btn-warning" onsumbit="addItem(${this.id})">Add to cart</button>`
         }
         return template
     }
