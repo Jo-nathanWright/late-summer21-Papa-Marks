@@ -1,5 +1,6 @@
 import { ProxyState } from "../AppState.js";
 import { itemsService } from "../Services/ItemsService.js";
+import { loadState, saveState } from "../Utils/LocalStorage.js"
 
 function _draw() {
     let template = ''
@@ -10,7 +11,9 @@ function _draw() {
 }
 export default class ItemsController {
     constructor() {
+        saveState()
         _draw()
+        loadState()
     }
 
     //createCart()
