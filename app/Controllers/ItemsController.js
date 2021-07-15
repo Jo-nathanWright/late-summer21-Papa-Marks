@@ -9,10 +9,20 @@ function _draw() {
     })
     document.getElementById("items").innerHTML = template
 }
+
+function _drawModal() {
+    debugger
+    let modal = ''
+    ProxyState.items.forEach(item => {
+        modal += item.ModalTemplate
+    })
+    document.getElementById("modal").innerHTML = modal
+}
 export default class ItemsController {
     constructor() {
         saveState()
         _draw()
+        _drawModal()
         loadState()
     }
 
